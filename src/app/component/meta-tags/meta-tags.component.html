@@ -1,0 +1,21 @@
+<input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="url" />
+<button (click)="onFetch()">Fetch</button>
+
+<br/>
+
+<table style="table-layout: fixed; width: 800px">
+	<thead>
+		<tr>
+			<th>Property</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<ng-container *ngFor="let tag of doc.tags">
+			<tr>
+				<td>{{tag.property}}</td>
+				<td>{{tag.value}}</td>
+			</tr>
+		</ng-container>
+	</tbody>
+</table>
